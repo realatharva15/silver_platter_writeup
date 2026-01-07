@@ -91,6 +91,7 @@ now we have a dash board as scr1ptkiddy
 
 #NOTE: this was just an explanation and the examples used had no relevance to the actual ctf
 
+# Privilege Escalation (A):
 now we access the page at the dashboard and then we find a message in the notification. it includes a username Tyler. now i didnt pay much attention to this message before but then after enumerating through the entire page including the admin's page (SilverAdmin is the username for the admin) i found nothing but dead ends. after almost spending 2 hours finding a lead i stumbled upon the personal workspace of sr1ptkiddy. now what i didn't expect was after i clicked on Game Night, i was directed to a webpage in another tab in my firefox browser which has a suspicious url. 
 
 http://10.80.162.213:8080/silverpeas/RSILVERMAIL/jsp/ReadMessage.jsp?ID=5
@@ -108,7 +109,7 @@ now we have something spicy! <div class="content-notification rich-content">
     </div>
 
 we get the ssh credentials for the user tim. we now access the ssh shell
-
+# Shell as tim:
 ```bash
 ssh tim@<target_ip>
 ```
@@ -119,6 +120,7 @@ cd /var/log
 ```
 now after manually enumerating all the logs i found out that in the auth.log.2 the user tyler was mentioned. as the contents of this log was too large, we copy paste the contents to DeepSeek and prompt it to find any interesting credentials. and we get a hit!
 
+# Shell as tyler:
 ```bash
 cat auth.log.2
 ```
