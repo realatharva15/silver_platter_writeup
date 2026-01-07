@@ -2,7 +2,7 @@
 # Author: Atharva Bordavekar
 # Difficulty: Easy
 # Points: 60
-# Vulnerabilities:
+# Vulnerabilities: Authentication Bypass, IDOR, group privileges
 
 # Reconnaissance:
 
