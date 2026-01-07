@@ -47,7 +47,7 @@ tried this but still we couldn't get a hit. but wait there is another port which
 whatweb http://10.80.162.213:8080/silverpeas
 ```
 we do not find any information on the versioon of silver peas so we jsut assume that it has the vulnerability to whichever search reuslt comes after googling for silverpeas exploit.
-i found a promising report on github. you can read this if you want to:
+i found a promising report on github. you can read this if you want to: https://gist.github.com/ChrisPritchard/4b6d5c70d9329ef116266a6c238dcb2d
 
 now i will generate a php session cookie using curl and paste it in the cookies section by going to the developer tools of the login page.
 
