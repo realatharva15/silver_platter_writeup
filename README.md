@@ -100,7 +100,7 @@ now the parameter at the END is a big IDOR vulnerability. we can check previous 
 
 ```bash
 curl -H "Cookie: JSESSIONID=wctYoa2viOx9taGtAUJ2nhGgswtEQ8S5GYunP5XU.ebabc79c6d2a" \
-  "http://10.80.162.213:8080/silverpeas/RSILVERMAIL/jsp/ReadMessage.jsp?ID=6" -v
+  "http://<target_ip>:8080/silverpeas/RSILVERMAIL/jsp/ReadMessage.jsp?ID=6" -v
 ```
 note: substitute your own php session cookie which you previously generated using curl.
 
